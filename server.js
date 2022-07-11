@@ -14,6 +14,7 @@ import connectDB from "./db/connect.js";
 // middleware
 import NotFoundMiddleware from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
+import authenticateUser from "./middleware/authenticate.js";
 
 // routes
 import authRoutes from "./routes/authRoutes.js";
@@ -34,7 +35,7 @@ app.get("/api/v1", (req, res) => {
 });
 
 app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/jobs", jobsRoutes);
+app.use("/api/v1/jobs", authenticateUser, jobsRoutes);
 
 app.use(NotFoundMiddleware);
 app.use(errorHandlerMiddleware);

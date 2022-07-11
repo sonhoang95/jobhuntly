@@ -64,6 +64,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   POST /api/v1/auth/updateUser
 // @access  Private
 const updateUser = asyncHandler(async (req, res) => {
+  console.log(req.user);
   res.status(200).json({ msg: "update user" });
 });
 
