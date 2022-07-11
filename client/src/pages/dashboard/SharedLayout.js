@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import {
   BigSidebar,
   DashboardNavbar,
@@ -18,7 +18,7 @@ const SharedLayout = () => {
           className={`relative ${showSidebar && "md:ml-60"} bg-blueGray-100`}
         >
           <DashboardNavbar />
-          <div className="px-4 md:px-10 mx-auto w-full mt-20 bg-green-400">
+          <div className="px-4 md:px-10 mx-auto w-full mt-[4.25rem] bg-green-400">
             <Outlet />
           </div>
         </div>

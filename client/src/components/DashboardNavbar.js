@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { FaUserCircle, FaCaretDown, FaAlignLeft } from "react-icons/fa";
-import logo from "../assets/images/logo.png";
 import { useAppContext } from "../context/AppContext";
-import Logo from "./Logo";
 
 const DashboardNavbar = () => {
   const [showLogOut, setShowLogOut] = useState(false);
