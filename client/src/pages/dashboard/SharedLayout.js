@@ -1,5 +1,9 @@
 import { Link, Outlet } from "react-router-dom";
-import { BigSidebar, DashboardNavbar } from "../../components/index";
+import {
+  BigSidebar,
+  DashboardNavbar,
+  SmallSidebar,
+} from "../../components/index";
 import { useAppContext } from "../../context/AppContext";
 const SharedLayout = () => {
   const { showSidebar } = useAppContext();
@@ -7,6 +11,7 @@ const SharedLayout = () => {
     <>
       <main>
         <div>
+          <SmallSidebar />
           <BigSidebar />
         </div>
         <div
