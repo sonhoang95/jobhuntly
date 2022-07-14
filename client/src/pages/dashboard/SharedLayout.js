@@ -9,7 +9,7 @@ const SharedLayout = () => {
   const { showSidebar } = useAppContext();
   return (
     <>
-      <main>
+      <main className="mt-4">
         <div>
           <SmallSidebar />
           <BigSidebar />
@@ -18,7 +18,7 @@ const SharedLayout = () => {
           className={`relative ${showSidebar && "md:ml-60"} bg-blueGray-100`}
         >
           <DashboardNavbar />
-          <div className="px-4 md:px-10 mx-auto w-full mt-[4.25rem] bg-green-400">
+          <div className="px-4 md:px-10 mx-auto w-full  mt-20 lg:mt-24">
             <Outlet />
           </div>
         </div>

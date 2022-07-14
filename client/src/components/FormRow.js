@@ -8,7 +8,7 @@ export default function FormRow({
   return (
     <div className="flex flex-col gap-2 mb-6">
       <label htmlFor="name" className="text-gray-700 text-sm">
-        {labelText}
+        {labelText || name}
       </label>
       <input
         className="border border-gray-400 p-2 rounded-lg"

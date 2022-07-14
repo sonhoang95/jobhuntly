@@ -64,8 +64,23 @@ const loginUser = asyncHandler(async (req, res) => {
 // @route   POST /api/v1/auth/updateUser
 // @access  Private
 const updateUser = asyncHandler(async (req, res) => {
-  console.log(req.user);
-  res.status(200).json({ msg: "update user" });
+  const { name, email, lastName, location } = req.body;
+  if (!name || !email || !lastName || !location) {
+    throw new BadRequestError("Please provide all values");
+  }
+
+  const user = await User.findOne({ _id: req.user.userId });
+
+  user.name = name;
+  user.email = email;
+  user.lastName = lastName;
+  user.location = location;
+
+  await user.save();
+
+  const token = user.createJWT();
+
+  res.status(StatusCodes.OK).json({ user, token, location: user.location });
 });
 
 export { registerUser, loginUser, updateUser };

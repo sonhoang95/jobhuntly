@@ -16,20 +16,20 @@ const DashboardNavbar = () => {
         >
           <FaAlignLeft />
         </button>
-        <div className="text-3xl font-bold text-blue-700">
+        <div className="text-2xl lg:text-4xl font-bold text-blue-700">
           {/* <Logo imgSrc={logo} /> */}
           <h3>Dashboard</h3>
         </div>
         <div className="relative">
           <button
-            className="flex items-center gap-2 p-2 rounded bg-blue-600 hover:bg-blue-800 text-white text-sm"
+            className="flex items-center gap-2 p-2 rounded bg-blue-600 hover:bg-blue-800 text-white text-sm transition-colors duration-200 ease-linear"
             type="button"
             onClick={() => setShowLogOut(!showLogOut)}
           >
             <FaUserCircle /> {user?.name} <FaCaretDown />
           </button>
           <div
-            className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-full flex items-center justify-center h-[40px] rounded bg-blue-200 text-blue-700 text-sm ${
+            className={`absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-full flex items-center justify-center h-[40px] rounded bg-blue-200 text-blue-700 text-sm hover:bg-blue-300 transition-colors duration-200 ease-linear ${
               showLogOut ? "flex" : "hidden"
             }`}
           >
